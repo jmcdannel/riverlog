@@ -1,0 +1,12 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">My River Log</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a ng-click="tabClick('rivers')">Rivers</a></li>
+            <li><a ng-click="tabClick('log')">Log Overview ({{totalRunCount}})</a></li>
+        </ul>
+    </div>
+</nav>
+
+<rl-log-overview ng-if="tab == 'log'"></rl-log-overview>
+<rl-river-list ng-if="tab == 'rivers'"></rl-river-list>

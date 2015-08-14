@@ -1,0 +1,39 @@
+<div class="row" ng-show="loggedRuns.length">
+	<div class="col s12">
+		<h2>My Log Entries</h2>
+
+		<table class="borderd">
+			<thead>
+				<tr>
+					<th data-field="name">River</th>
+					<th data-field="state">State</th>
+					<th data-field="Date">Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="entry in loggedRuns">
+					<td>{{entry.river.name}}</td>
+					<td>{{entry.river.location}}</td>
+					<td>{{entry.date | date: "MM/dd/yyyy"}}</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td></td>
+					<td></td>
+					<td class="log-total">
+						<p>Total runs: <strong>{{totalRunCount}}</strong></p>
+					</td>
+				</tr>
+			</tfoot>
+
+		</table>
+	</div>
+</div>
+
+<div class="row" ng-hide="loggedRuns.length">
+	<div class="col s12">
+		<p>You haven't logged any runs.</p>
+		<a href="#" ng-click="tabClick('rivers')" class="waves btn">Log some runs now!</a>
+	</div>
+</div>

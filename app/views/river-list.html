@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col s12">
+		<h2>River List</h2>
+	</div>
+</div>
+
+<div class="row">
+
+	<rl-river
+		ng-repeat="river in rivers"
+		riverrun="river"
+		total="totalRunCount"
+		log="logrun(river, day)">
+	</rl-river>
+
+</div>
